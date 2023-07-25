@@ -8,8 +8,14 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+/* Routes */
+const accountsRoutes = require('./routes/Accounts')
+
+app.use('/accounts', accountsRoutes)
+
 const port = 3001
 
 app.listen(port, () => {
     console.log(`listening on ${port}`)
+
 })
